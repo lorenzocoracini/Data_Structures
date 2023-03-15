@@ -1,18 +1,17 @@
 class PascalArray:
-    def __init__(self, primeira_posicao, ultima_posicao):
-        self._primeira_posicao = primeira_posicao
-        self._ultima_posicao = ultima_posicao
-        self._length = (self._ultima_posicao - self._primeira_posicao) + 1
+    def __init__(self, first_position, last_position):
+        self._first_position = first_position
+        self._last_position = last_position
+        self._length = (self._first_position - self._last_position) + 1
         self._array = self._length * []
 
-    def atribuir(self, valor, posicao):
+    def set(self, value, position):
         try:
-            self._array[posicao - self._primeira_posicao] = valor
+            self._array[position - self._first_position] = value
         except ValueError:
-            return ('Posição fora da lista')
+            return ("Array without this position!")
 
-
-    def acessar(self, posicao):
-        if (posicao - self._primeira_posicao < 0) :
-            return ('Posição fora da lista')
-        return self._array[posicao - self._primeira_posicao]
+    def get(self, position):
+        if (position - self._first_position < 0):
+            return ("Array without this position!")
+        return self._array[position - self._first_position]
