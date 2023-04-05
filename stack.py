@@ -30,4 +30,3 @@ class Stack:
 
     def lenght(self):
         return self._top + 1
-
